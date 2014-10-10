@@ -26,6 +26,10 @@ module FlightStats
         from_response API.get("#{base_path}/flight/status/#{carrier}/#{flight_number}/dep/#{year}/#{month}/#{day}", {}, options), 'flightStatuses'
       end
 
+      def departing_on_from_airport(carrier, flight_number, year, month, day, airport_code)
+        from_response API.get("#{base_path}/flight/status/#{carrier}/#{flight_number}/dep/#{year}/#{month}/#{day}", {}, "airport=#{airport_code}"), 'flightStatuses'
+      end
+
       def arriving_on(carrier, flight_number, year, month, day, options = {})
         from_response API.get("#{base_path}/flight/status/#{carrier}/#{flight_number}/arr/#{year}/#{month}/#{day}", {}, options), 'flightStatuses'
       end
