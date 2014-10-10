@@ -11,6 +11,7 @@ module FlightStats
                   :schedule,
                   :operational_times,
                   :codeshares,
+                  :delays, 
                   :flight_durations,
                   :airport_resources,
                   :flight_equipment
