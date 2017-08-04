@@ -26,7 +26,7 @@ module FlightStats
         @@base_path
       end
 
-      def by_iata_code
+      def by_iata_code(iata_code, options = {})
         from_response API.get("#{base_path}/iata/#{iata_code}", {}, options), 'airlines'
       end
     end
